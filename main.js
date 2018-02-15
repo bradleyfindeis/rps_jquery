@@ -6,12 +6,12 @@ var user;
 var computer;
 var result;
 var options = ['rock', 'paper', 'scissors'];
-var userLabel = $("user");
-var computerLabel = $('computer');
-var winnerLabel = $('winner');
-var rockStats = $('rockStats');
-var paperStats = $('paperStats');
-var scissorStats = $('scissorStats');
+var userLabel = $('#user');
+var computerLabel = $('#computer');
+var winnerLabel = $('#winner');
+var rockStats = $('#rockStats');
+var paperStats = $('#paperStats');
+var scissorStats = $('#scissorStats');
 var stats = {
   rock: 0,
   paper: 0,
@@ -41,9 +41,9 @@ function compare() {
 }
 
 function printResults() {
-  $('user') = 'User: ' + user;
-  $('computer') = 'Computer: ' + computer;
-  $('result') = 'Result: ' + result;
+  $('#user') = 'User: ' + user;
+  $('#computer') = 'Computer: ' + computer;
+  $('#result') = 'Result: ' + result;
   var klass = '';
   if (result === 'Win') {
     klass = 'green'
@@ -63,12 +63,12 @@ function startGame(e) {
 }
 
 function calcTotals() {
-  rockStats.innerHTML = 'Rock: ' + stats.rockWins + "/" + stats.rock;
-  paperStats.innerHTML = 'Paper: ' + stats.paperWins + "/" + stats.paper;
-  scissorStats.innerHTML = 'Scissors: ' + stats.scissorsWins + "/" + stats.scissors;
+  $('$rockStats') = 'Rock: ' + stats.rockWins + "/" + stats.rock;
+  $('#paperStats') = 'Paper: ' + stats.paperWins + "/" + stats.paper;
+  $('#scissorStats') = 'Scissors: ' + stats.scissorsWins + "/" + stats.scissors;
 }
 
-var choices = $('choice');
+var choices = $('#choice');
 for (var i in choices) {
   try {
     choices[i].click(startGame);
